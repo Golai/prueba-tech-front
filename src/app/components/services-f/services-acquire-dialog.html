@@ -1,0 +1,19 @@
+
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+
+	<h2 mat-dialog-title>{{service.name}}</h2>
+	<mat-dialog-content>
+		<p>Categoria: {{service.category}}</p>
+		<p>Monto minimo: {{service.currency}} {{service.amount_min}}</p>
+		<p>Desea adquirir esste servicio ?</p>
+	  <mat-form-field>
+		<mat-label>Valor de adquisición</mat-label>
+		<input matInput [(ngModel)]="amount" />
+	  </mat-form-field>
+	</mat-dialog-content>
+	<mat-dialog-actions>
+	  <button mat-button (click)="onNoClick()">No gracias</button>
+	  <button mat-button (click)="acquireService()" cdkFocusInitial>adquirir</button>
+	</mat-dialog-actions>
+</div>
